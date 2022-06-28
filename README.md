@@ -56,7 +56,8 @@ $secret_pwd = 'XXXXXXXXXXXX';
 ### Usando composer
 
 - Bootstrap versione 5.1.3 è stato scaricato nella sua versione compilata usando composer
-Stesso discorso per la libreria con le icone e quella per generare i codici a barre
+- Stesso discorso per la libreria con le icone *bootstrap-icons* 
+- libreria per generare i codici a barre
 
 ```
 composer require picqer/php-barcode-generator
@@ -64,7 +65,7 @@ composer require twbs/bootstrap:5.1.3
 composer require twbs/bootstrap-icons
 ```
 
-Crea la cartella vendor\twbs/bootstrap
+Per installare l'applicazione è sufficiente lanciare un `composer install` nella cartella principale dlel'applicazione dove è contenuto il file `composer.json`.
 
 
 

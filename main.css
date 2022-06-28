@@ -119,8 +119,6 @@
    	
     /*Il print footer */
     div.printFooter {
-        /*position: fixed;
-        bottom: 0;*/
         position:absolute;
         bottom:0;
         left: 0;
@@ -133,8 +131,8 @@
       }
 
    	/* commentata riga 191 del file bootstrap.css per consentire la stampa dei colori*/ 
-   	.fa{ 
-    -webkit-print-color-adjust: exact;
+   	    /*.fa{ 
+        -webkit-print-color-adjust: exact;
 		}
 
 	  .fas{ 
@@ -145,7 +143,7 @@
 		  font-family:georgia, times, serif;
 		  -webkit-print-color-adjust: exact;
 		  color-adjust: exact;
-	  }
+	  }*/
 	  
 	  .rows-print-as-pages .row {
 		page-break-before: auto;
