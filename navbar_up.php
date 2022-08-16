@@ -76,7 +76,7 @@ VALUES ('NUOVO UTENTE ', 'INSERT', $1, now(), (select id_user from util_go.sys_u
 <div class="banner"> <div id="banner-image"></div> 
 <h3>  <a class="navbar-brand link-light" href="#">
     <img class="pull-left" src="img\amiu_small_white.png" alt="SIT" width="85px">
-    <span>Gestione oggetti</span> 
+    <span>Gestione oggetti- Reportistica</span> 
   </a> 
 </h3>
 </div>
@@ -92,9 +92,11 @@ VALUES ('NUOVO UTENTE ', 'INSERT', $1, now(), (select id_user from util_go.sys_u
         <!--li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li-->
+        <?php if ($_SESSION['username']=='Marzocchi') { ?>
         <li class="nav-item">
-          <a class="nav-link" href="./interventi.php">Elenco interventi</a>
+          <a class="nav-link" href="./interventi.php">Interventi aperti</a>
         </li>
+       
         <li class="nav-item">
           <a class="nav-link" href="./ordini.php">Ordini di lavoro</a>
         </li>
@@ -106,6 +108,10 @@ VALUES ('NUOVO UTENTE ', 'INSERT', $1, now(), (select id_user from util_go.sys_u
           <a class="nav-link" href="./chiusura.php">Chiusura interventi</a>
         </li>
         <?php } ?>
+        <?php } ?>
+        <li class="nav-item">
+          <a class="nav-link" href="./interventi_chiusi.php">Report interventi chiusi</a>
+        </li>
         <!--li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
         </li>

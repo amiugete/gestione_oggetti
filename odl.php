@@ -118,6 +118,9 @@ $name=dirname(__FILE__);
           echo "<li> Tipo intervento: ".$r['tipo_intervento']."</li>";
           echo "<li> Contenitore: ".$r['rifiuto']. " da ".$r['volume']. " l</li>";
           echo "<li> Piazzola: ".$r['piazzola']."</li>";
+          echo "<li> Posizione:";
+          echo '<img src="https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=https://www.google.it/maps/dir//'.$r['lat'].','.$r['lon'].'/@'.$r['lat'].','.$r['lon'].',18z" alt="Link to Google Maps" width="150" height="150">';
+          echo "</li>";
           echo "<li> Quartiere/comune e UT: ".$r['quartiere']. " - " .$r['ut']. "</li>";
           //Altri dettagli elemento 
           

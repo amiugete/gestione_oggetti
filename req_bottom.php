@@ -1,6 +1,13 @@
 <?php
 ?>
 
+<!-- Grafici -->
+<script src="./charts/charts.js"></script>
+<script src="./charts/tipologie.php"></script>
+<script src="./charts/ut.php"></script>
+<script src="./charts/squadre.php"></script>
+<script src="./charts/t_e.php"></script>
+
 
 <!--script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script-->
 
@@ -58,7 +65,6 @@
 <script src="./vendor/bootstrap-table/dist/extensions/filter-control/bootstrap-table-filter-control.js" ></script>
 <script src="./vendor/bootstrap-table/dist/extensions/auto-refresh/bootstrap-table-auto-refresh.js"></script>
 <script src="./vendor/bootstrap-table/dist/extensions/group-by-v2/bootstrap-table-group-by.min.js"></script>
-
 
 
 

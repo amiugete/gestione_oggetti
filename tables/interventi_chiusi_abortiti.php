@@ -18,12 +18,12 @@ if(!$conn) {
 } else {
 
 
-    $query_where = "where id_stato_intervento in (1,6) and odl_id is null";
+    $query_where = "where id_stato_intervento in (2,3,4)";
     
     
     $query= $query0." ". $query_where." ".$query_group;
 
-    //print $query."<br>";
+    //print $query;
 
     $result = pg_prepare($conn, "my_query", $query);
     $result = pg_execute($conn, "my_query", array());

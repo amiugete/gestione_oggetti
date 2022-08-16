@@ -94,7 +94,7 @@ if ($gestione_sit==1){
 
     $resp = curl_exec($curl);
     echo $resp;
-    if ($resp== $el){
+    if ($resp == $el OR $resp >0){
         $stato_chiuso=3;
     } else {
         $stato_chiuso=4;
@@ -130,13 +130,19 @@ $status2= pg_result_status($result2);
 if ($nc!='ND'){
     // aggiungo note chiusura --> UPDATE
     $query3="UPDATE gestione_oggetti.intervento
-    SET note_chiusura=$1
-    WHERE id=$2 ;";
+    SET note_chiusura=$1, elemento_id=$2
+    WHERE id=$3 ;";
     $result3 = pg_prepare($conn, "my_query3", $query3);
-    $result3 = pg_execute($conn, "my_query3", array($nc,$id));
+    $result3 = pg_execute($conn, "my_query3", array($nc,$resp, $id));
     $status3= pg_result_status($result3);
 } else {
-    $status3=1;
+    $query3="UPDATE gestione_oggetti.intervento
+    SET elemento_id=$1
+    WHERE id=$2 ;";
+    $result3 = pg_prepare($conn, "my_query3", $query3);
+    $result3 = pg_execute($conn, "my_query3", array($resp, $id));
+    $status3= pg_result_status($result3);
+    //$status3=1;
 }
 
 
