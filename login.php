@@ -36,16 +36,20 @@ if (isset($_POST["ldapLogin"])){
 
 	if ($ldapConnection) {
 		
-		if (isset($_POST["user"]) && $_POST["user"] != "") 
-			$ldapUser = addslashes(trim($_POST["user"]));
-		else 
+		if (isset($_POST["user"]) && $_POST["user"] != ""){ 
+			$ldapUser = trim($_POST["user"]);
+		} else{ 
 			$errorMessage = "Invalid User value!!";
+		}
 		
-		if (isset($_POST["password"]) && $_POST["password"] != "") 
-			$ldapPassword = addslashes(trim($_POST["password"]));
-		else 
+		if (isset($_POST["password"]) && $_POST["password"] != "") {
+			$ldapPassword = trim($_POST["password"]);
+			//echo $ldapPassword;
+			//exit;
+		} else {
 			$errorMessage = "Invalid Password value!!";
-		
+		}
+
 		if ($errorMessage == ""){
 			// binding to ldap server
 			ldap_set_option($ldapConnection, LDAP_OPT_PROTOCOL_VERSION, 3) or die('Unable to set LDAP protocol version');
