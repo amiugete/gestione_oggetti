@@ -214,17 +214,13 @@ $('#conferma2').click(verifyCheckBoxQuartieri);
 });
 </script>
 </div>	<!--tabella-->
-
-
-
-
-
-
            
 
 
 </div> <!--row-->
 
+
+<br>
 <div class="row" id="stat">
 <hr>
 <h4>Statistiche - <a href="#tabella"class="btn btn-info" > 

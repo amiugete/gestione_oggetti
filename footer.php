@@ -11,7 +11,7 @@
     
 <span class="copyright">
 <hr>
-Applicativo realizzato da <a href="https://www.amiu.genova.it" target="_blank">AMIU Genova SPA</a> (gruppo GETE) 
+Applicativo realizzato da <a href="https://www.amiu.genova.it" target="_blank">AMIU Genova SPA</a> (Gestione applicativi SIGT) 
 e distribuito con licenza open source GNU GPL 3.0. <br>Il codice dell'applicazione è disponibile su 
 <a href="https://github.com//amiugete/gestione_oggetti" targer="_new"> <i class="fab fa-github"></i> github</a>. 
 In caso di problemi <?php echo $problemi;?>
