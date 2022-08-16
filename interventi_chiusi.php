@@ -73,8 +73,9 @@ $name=dirname(__FILE__);
 
   
 
-
+      <div id="tabella">
       <hr>
+      
         <h4>Elenco interventi chiusi / rimossi - 
           <a href="#stat"class="btn btn-info" > 
           <i class="fa-solid fa-chart-line"></i>Visualizza statistiche</a></h4>
@@ -87,7 +88,7 @@ $name=dirname(__FILE__);
                   <!--div id="toolbar">
         <button id="showSelectedRows" class="btn btn-primary" type="button">Crea ordine di lavoro</button>
       </div-->
-				<div id="tabella">
+				
 				<table  id="interventi" class="table-hover" 
         idfield="id"
         data-toggle="table" data-url="./tables/interventi_chiusi_abortiti.php" 
@@ -226,7 +227,8 @@ $('#conferma2').click(verifyCheckBoxQuartieri);
 
 <div class="row" id="stat">
 <hr>
-<h4>Statistiche</h4>
+<h4>Statistiche - <a href="#tabella"class="btn btn-info" > 
+          <i class="fa-solid fa-table"></i>Visualizza tabella</a></h4>
 <figure class="highcharts-figure col-lg-6">
     <div id="tipologie"></div>
 </figure>
