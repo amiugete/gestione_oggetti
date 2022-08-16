@@ -158,6 +158,10 @@
 		table tr td,
 		table tr th {
 			page-break-inside: avoid;
+            width: 50%;
+            float: left;
+            word-break: break-word;
+            padding-left: 10px;
 		}
 
 		.collapse {

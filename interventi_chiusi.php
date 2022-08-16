@@ -117,8 +117,9 @@ $name=dirname(__FILE__);
         <th data-field="data_last" data-sortable="true" data-visible="true" data-formatter="dateFormatter" data-filter-control="input">Data<br>chiusura</th>
         <th data-field="priorita" data-sortable="true" data-visible="true" data-filter-control="select">Priorita</th>
         <!--th data-field="DATA" data-sortable="true" data-visible="true" data-formatter="winLOSSFormatter" data-filter-control="input">Data</th-->
-        <th data-field="volume" data-sortable="true" data-visible="true" data-filter-control="select">Vol [l]</th>
-        <th data-field="rifiuto" data-sortable="true" data-visible="true" data-filter-control="select">Rifiuto</th>
+        <!--th data-field="volume" data-sortable="true" data-visible="true" data-filter-control="select">Vol [l]</th>
+        <th data-field="rifiuto" data-sortable="true" data-visible="true" data-filter-control="select">Rifiuto</th-->
+        <th data-field="desc_elemento" data-sortable="true" data-visible="true" data-filter-control="select">Descrizione<br>elemento</th>
         <th data-field="quartiere" data-sortable="true" data-visible="true" data-filter-control="select">Quartiere<br>/Comune</th>
         <th data-field="ut" data-sortable="true" data-visible="true" data-filter-control="select">UT</th>
         <th data-field="desc_intervento" data-sortable="true" data-visible="true" data-filter-control="input">Descrizione</th>
