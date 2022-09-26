@@ -16,13 +16,13 @@
     desc_intervento,
     st_y(st_transform(geoloc,4326)) as lat,
     st_x(st_transform(geoloc,4326)) as lon,
-    string_agg(distinct desc_elemento, ',') as desc_elemento,
+    string_agg(distinct desc_elemento, ' - ') as desc_elemento,
     sum(volume) as volume, 
-    string_agg(distinct rifiuto, ',') as rifiuto
+    string_agg(distinct rifiuto, ' - ') as rifiuto
     from 
     (
     select i.id,
-    string_agg(ti.descrizione, ',') as tipo_intervento,
+    string_agg(ti.descrizione, ' - ') as tipo_intervento,
     tsi.id as id_stato_intervento,
     tsi.descrizione as stato_intervento,
     i.data_creazione,
@@ -81,7 +81,7 @@
     tr.nome
     UNION
     select i.id,
-    string_agg(ti.descrizione, ',') as tipo_intervento,
+    string_agg(ti.descrizione, ' - ') as tipo_intervento,
     tsi.id as id_stato_intervento,
     tsi.descrizione as stato_intervento,
     i.data_creazione, 

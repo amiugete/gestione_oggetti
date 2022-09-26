@@ -110,6 +110,9 @@ VALUES ('NUOVO UTENTE ', 'INSERT', $1, now(), (select id_user from util_go.sys_u
         <?php } ?>
         <?php } ?>
         <li class="nav-item">
+          <a class="nav-link" href="./report_aperti.php">Statistiche giornaliere</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="./interventi_chiusi.php">Report interventi chiusi</a>
         </li>
         <!--li class="nav-item">
