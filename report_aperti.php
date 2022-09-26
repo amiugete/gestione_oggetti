@@ -120,7 +120,7 @@ $name=dirname(__FILE__);
             echo $r['abort'];
         }
     ?></h5>
-    <h6 class="card-subtitle mb-2 text-muted">Interventi non necessari</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Interventi rimossi perchè non necessari</h6>
     <p class="card-text"></p>
     </div>
     </div>
@@ -141,7 +141,7 @@ $name=dirname(__FILE__);
         }
     ?></h5>
     <h6 class="card-subtitle mb-2 text-muted">Interventi presi in carico</h6>
-    <p class="card-text"></p>
+    <p class="card-text"><a class="btn btn-secondary" target="gestione_oggetti" href="<?php echo $gestione_oggetti_link;?>ordini">Visualizza dettagli</a></p>
     </div>
     </div>
 
@@ -162,13 +162,152 @@ $name=dirname(__FILE__);
         }
     ?></h5>
     <h6 class="card-subtitle mb-2 text-muted">Interventi aperti</h6>
-    <p class="card-text"></p>
+    <p class="card-text"><a class="btn btn-secondary" target="gestione_oggetti" href="<?php echo $gestione_oggetti_link;?>interventi">Visualizza dettagli</a></p>
     </div>
     </div>
 
 
   </div>
       
+  <hr>
+  <h3> Medie </h3>
+    <div class="row">
+    <div class="card col-sm-2" >
+    <div class="card-body">
+      <h5 class="card-title"><i class="fa-solid fa-triangle-exclamation"></i> 
+        <?php
+        $query6="select round(avg(count)), count(count) from (
+          select count(distinct id), data_creazione::date 
+          from gestione_oggetti.intervento i 
+          group by data_creazione::date
+          ) interventi_giornalieri;";
+        $result = pg_prepare($conn, "my_query6", $query6);
+        $result = pg_execute($conn, "my_query6", array());
+        while($r = pg_fetch_assoc($result)) {
+            echo $r['round'];
+            $giorni=$r['count'];
+        }
+    ?></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Interventi mediamente aperti al giorno</h6>
+    <p class="card-text"></p>
+    </div>
+    </div>
+
+
+    <div class="card col-sm-2" >
+    <div class="card-body">
+      <h5 class="card-title"><i class="fa-solid fa-calendar-days"></i>
+      <?php echo $giorni;?>
+      </h5>
+    <h6 class="card-subtitle mb-2 text-muted">Giorni utilizzati per segnalazioni</h6>
+    </div>
+    </div>
+
+    <div class="card col-sm-2" >
+    <div class="card-body">
+      <h5 class="card-title"><i class="fa-solid fa-check-double"></i> 
+        <?php
+        $query7="select round(avg(count)), count(count) from (
+          select count(id), data_ora::date from gestione_oggetti.intervento_tipo_stato_intervento itsi 
+          where tipo_stato_intervento_id in (3,4)
+          group by data_ora::date
+          ) interventi_chiusi_giornalieri;";
+        $result = pg_prepare($conn, "my_query7", $query7);
+        $result = pg_execute($conn, "my_query7", array());
+        while($r = pg_fetch_assoc($result)) {
+            echo $r['round'];
+            $giorni=$r['count'];
+        }
+    ?></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Interventi mediamente chiusi al giorno</h6>
+    <p class="card-text"></p>
+    </div>
+  </div>
+
+  <div class="card col-sm-2" >
+    <div class="card-body">
+      <h5 class="card-title"><i class="fa-solid fa-calendar-days"></i>
+      <?php echo $giorni;?>
+      </h5>
+    <h6 class="card-subtitle mb-2 text-muted">Giorni effettivi per chiusura interventi</h6>
+    </div>
+    </div>
+
+
+    <div class="card col-sm-2" >
+    <div class="card-body">
+      <h5 class="card-title"><i class="fa-solid fa-envelope-circle-check"></i>  
+        <?php
+        $query8="select round(avg(count)), count(count) from (
+          select count(id), data_ora::date from gestione_oggetti.intervento_tipo_stato_intervento itsi 
+          where tipo_stato_intervento_id in (2)
+          group by data_ora::date
+          ) interventi_chiusi_giornalieri;";
+        $result = pg_prepare($conn, "my_query8", $query8);
+        $result = pg_execute($conn, "my_query8", array());
+        while($r = pg_fetch_assoc($result)) {
+            echo $r['round'];
+            $giorni=$r['count'];
+        }
+    ?></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Interventi mediamente rimossi al giorno</h6>
+    <p class="card-text"></p>
+    </div>
+  </div>
+
+  <div class="card col-sm-2" >
+    <div class="card-body">
+      <h5 class="card-title"><i class="fa-solid fa-calendar-days"></i>
+      <?php echo $giorni;?>
+      </h5>
+    <h6 class="card-subtitle mb-2 text-muted">Giorni effettivi</h6>
+    </div>
+    </div>
+    
+    <div>
+    <div class="row">
+
+      <?php
+    $query9="select ordine, priorita, 
+    date_part('days', justify_interval(avg(giorni)))
+    as giorni_medi, count(id) from (
+    select tp.ordine,  i.id, tp.descrizione as priorita,
+    data_creazione, itsi.data_ora, (itsi.data_ora - data_creazione) as  giorni
+    from gestione_oggetti.intervento i 
+    join gestione_oggetti.intervento_tipo_stato_intervento itsi on i.id = itsi.intervento_id 
+    join gestione_oggetti.tipo_priorita tp on tp.id=i.tipo_priorita_id 
+    where itsi.tipo_stato_intervento_id in (3,4)
+    ) giorni_interventi
+    group by ordine, priorita
+    order by ordine";
+    $result = pg_prepare($conn, "my_query9", $query9);
+    $result = pg_execute($conn, "my_query9", array());
+    while($r = pg_fetch_assoc($result)) {
+    ?>
+    <div class="card col-sm-4" >
+    <div class="card-body">
+      <h5 class="card-title"><i class="fa-solid fa-hourglass-half"></i>
+      <?php echo $r['giorni_medi'];?>
+      </h5>
+    <h6 class="card-subtitle mb-2 text-muted">Giorni mediamente impiegati per risolvere segnalazioni con priorità 
+      <b><?php echo $r['priorita'];?></b></h6>
+    </div>
+    </div>
+    <?php
+    }
+    ?>
+    </div>
+
+
+
+
+
+    <div class="row">
+    <b>NOTA BENE: dalle statistiche sono attualmente esclusi gli spostamenti temporanei dovuti a fiere, 
+    manifestazioni asfaltature ed altri interventi che per varie ragioni il territorio non richieda tramite SIT.</b>
+    </div>
+    <br><hr>
+  
 
   
 
