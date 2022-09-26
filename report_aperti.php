@@ -80,7 +80,7 @@ $name=dirname(__FILE__);
             echo $r['interventi_totali'];
         }
     ?></h5>
-    <h6 class="card-subtitle mb-2 text-muted">Interventi richiesti</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Interventi richiesti tramite SIT dal 18/07/2022</h6>
     <p class="card-text"></p>
     </div>
     </div>
