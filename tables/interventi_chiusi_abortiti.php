@@ -18,7 +18,7 @@ if(!$conn) {
 } else {
 
 
-    $query_where = "where id_stato_intervento in (2,3,4) and desc_elemento not ilike 'riordino_piazzola'";
+    $query_where = "where id_stato_intervento in (2,3,4) and desc_elemento not ilike 'riordino_piazzola' and desc_elemento not ilike '%PUNTODILAVAGGIO%'";
     
     
     $query= $query0." ". $query_where." ".$query_group;
