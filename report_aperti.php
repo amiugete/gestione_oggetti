@@ -290,7 +290,8 @@ $name=dirname(__FILE__);
       <?php echo $r['giorni_medi'];?>
       </h5>
     <h6 class="card-subtitle mb-2 text-muted">Giorni mediamente impiegati per risolvere segnalazioni con priorità 
-      <b><?php echo $r['priorita'];?></b></h6>
+      <b><?php echo $r['priorita'];?></b>
+    <br>(<i>Totale <?php echo $r['count'];?> segnalazioni</i>)</h6>
     </div>
     </div>
     <?php
