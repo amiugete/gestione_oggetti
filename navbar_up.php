@@ -110,10 +110,24 @@ VALUES ('NUOVO UTENTE ', 'INSERT', $1, now(), (select id_user from util_go.sys_u
         <?php } ?>
         <?php } ?>
         <li class="nav-item">
-          <a class="nav-link" href="./report_aperti.php">Statistiche giornaliere</a>
+          <a class="nav-link" href="./statistiche.php">Statistiche</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./interventi_chiusi.php">Report interventi chiusi</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Report
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="./report_prod_squadra.php">Report produzione giornaliera per squadra</a></li>
+            <li><a class="dropdown-item" href="./report_prod_reparto.php">Report produzione giornaliera reparto</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="./report_ut.php">Report interventi per UT</a></li>
+            <li><a class="dropdown-item" href="./report_tipo.php">Report interventi per Tipo</a></li>
+            <li><a class="dropdown-item" href="./interventi_chiusi.php">Report interventi chiusi</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="./report_data_ut_tipo.php">Report richieste giornaliere per UT e tipo</a></li>
+            <li><a class="dropdown-item" href="./report_data_ut.php">Report richieste giornaliere per UT</a></li>
+            <li><a class="dropdown-item" href="./report_data_tipo.php">Report richieste giornaliere per tipo</a></li>
+          </ul>
         </li>
         <!--li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>

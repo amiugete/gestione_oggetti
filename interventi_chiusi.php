@@ -245,9 +245,14 @@ $('#conferma2').click(verifyCheckBoxQuartieri);
 </div>
 </div>
 
+<!-- Grafici -->
+<script src="./charts/charts.js"></script>
+<script src="./charts/tipologie.php"></script>
+<script src="./charts/ut.php"></script>
+<script src="./charts/squadre.php"></script>
+<script src="./charts/t_e.php"></script>
+
 <?php
-
-
 # FINE
 
 require_once('req_bottom.php');

@@ -1,12 +1,6 @@
 <?php
 ?>
 
-<!-- Grafici -->
-<script src="./charts/charts.js"></script>
-<script src="./charts/tipologie.php"></script>
-<script src="./charts/ut.php"></script>
-<script src="./charts/squadre.php"></script>
-<script src="./charts/t_e.php"></script>
 
 
 <!--script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script-->
@@ -40,8 +34,8 @@
 <script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.10.21/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
 
 
-<script src="./vendor/moment.js"></script>
-
+<!--script src="./vendor/moment.js"></script-->
+<script type="text/javascript" src="./vendor/moment-with-locales.min.js"></script>
 
 
 <!--script src="./bootstrap-datepicker/js/bootstrap-datepicker.js"></script-->
