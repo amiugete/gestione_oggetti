@@ -170,7 +170,7 @@ $name=dirname(__FILE__);
   </div>
       
   <hr>
-  <h3> Medie </h3>
+  <h3> Medie interventi giornalieri</h3>
     <div class="row">
     <div class="card col-sm-2" >
     <div class="card-body">
@@ -199,7 +199,7 @@ $name=dirname(__FILE__);
       <h5 class="card-title"><i class="fa-solid fa-calendar-days"></i>
       <?php echo $giorni;?>
       </h5>
-    <h6 class="card-subtitle mb-2 text-muted">Giorni utilizzati per segnalazioni</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Giorni utilizzati per aprire segnalazioni</h6>
     </div>
     </div>
 
@@ -265,6 +265,9 @@ $name=dirname(__FILE__);
     </div>
     
     <div>
+    <hr>
+    <h3> Medie chiusura interventi</h3>
+
     <div class="row">
 
       <?php
