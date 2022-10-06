@@ -175,6 +175,7 @@ $name=dirname(__FILE__);
 
   <hr>
   <h3> Medie interventi giornalieri</h3>
+  <h4 style="text-align:center">Da luglio 2022</h4>
     <div class="row">
     <div class="card col-sm-4" >
     <div class="card-body">
@@ -270,8 +271,8 @@ $name=dirname(__FILE__);
     
     <div>
 
-    <br>
-    <h4>Ultimi 30 giorni</h4>
+    
+    <h4 style="text-align:center">Ultimi 30 giorni</h4>
 
     
     <div class="row">
@@ -381,7 +382,7 @@ $name=dirname(__FILE__);
 
     <hr>
     <h3> Medie chiusura interventi</h3>
-
+    <h4 style="text-align:center">Da luglio 2022</h4>
     <div class="row">
 
       <?php
@@ -416,8 +417,8 @@ $name=dirname(__FILE__);
     ?>
     </div>
 
-  <br>
-  <h4>Ultimi 30 giorni</h4>
+ 
+  <h4 style="text-align:center">Ultimi 30 giorni</h4>
   <div class="row">
 
       <?php
