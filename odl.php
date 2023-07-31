@@ -4,7 +4,7 @@ session_start();
 
 $id_odl=$_GET['id'];
 
-if(!isset($_COOKIE['un'])) {
+/*if(!isset($_COOKIE['un'])) {
     //echo "Cookie named un is not set!";
   } else {
     //echo "Cookie un is set!<br>";
@@ -26,7 +26,7 @@ if (!$_SESSION['username']){
   $_COOKIE['origine']=basename($_SERVER['PHP_SELF']);
   header("location: ./login.php");
   //exit;
-}    
+} */   
 ?>
 <!DOCTYPE html>
 <html lang="en">

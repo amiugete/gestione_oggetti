@@ -2,7 +2,6 @@
 
 
 // redirect verso pagina interna
-header("location: ./interventi.php");
-
+header("location: ./statistiche.php");
 
 ?>

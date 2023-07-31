@@ -1,4 +1,7 @@
 <?php
+
+require_once('./check_utente.php');
+
 $query_role='SELECT  sr.id_role, sr."name" as "role" FROM util_go.sys_users su
 join util_go.sys_roles sr on sr.id_role = su.id_role  
 where su."name" ilike $1;';
