@@ -233,7 +233,8 @@ $name=dirname(__FILE__);
 				data-side-pagination="server"
         data-show-refresh="true" data-show-toggle="true"
 				data-filter-control="true"
-        data-toolbar="#toolbar" >
+        data-toolbar="#toolbar" 
+        data-query-params="queryParams">
         
         
 <thead>
@@ -263,6 +264,23 @@ $name=dirname(__FILE__);
   $(function() {
     $('#interventi').bootstrapTable()
   })
+
+  //************************************
+  // Per esportare tutto
+  var $table = $('#interventi')
+  $(function() {
+    $table.bootstrapTable()
+  })
+
+  function queryParams(params) {
+    var options = $table.bootstrapTable('getOptions')
+    if (!options.pagination) {
+      params.limit = options.totalRows
+    }
+    return params
+  }
+  //************************************
+
 
   /*data.forEach(d=>{
        data_creazione = moment(d.data_creazione).format('DD/MM/YYYY HH24:MI')
