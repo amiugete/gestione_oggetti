@@ -5,5 +5,5 @@ jwt.php
 
 
 vendor/composer/*
-
+composer.lock
 
