@@ -97,18 +97,18 @@ VALUES ('NUOVO UTENTE ', 'INSERT', $1, now(), (select id_user from util_go.sys_u
         </li-->
         <?php if ($_SESSION['username']=='Marzocchi') { ?>
         <li class="nav-item">
-          <a class="nav-link" href="./interventi.php">Interventi aperti</a>
+          <a class="nav-link" href="./interventi.php">Interventi aperti (T)</a>
         </li>
-       
+        
         <li class="nav-item">
-          <a class="nav-link" href="./ordini.php">Ordini di lavoro</a>
+          <a class="nav-link" href="./ordini.php">Ordini di lavoro (T)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./squadre.php">Squadre</a>
+          <a class="nav-link" href="./squadre.php">Squadre (T)</a>
         </li>
         <?php if ($id_role > 0) { ?>
         <li class="nav-item">
-          <a class="nav-link" href="./chiusura.php">Chiusura interventi</a>
+          <a class="nav-link" href="./chiusura.php">Chiusura interventi (T)</a>
         </li>
         <?php } ?>
         <?php } ?>
@@ -120,6 +120,8 @@ VALUES ('NUOVO UTENTE ', 'INSERT', $1, now(), (select id_user from util_go.sys_u
             Report
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="./interventi.php">Interventi aperti</a></li>
+            <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="./report_prod_squadra.php">Report produzione giornaliera per squadra</a></li>
             <li><a class="dropdown-item" href="./report_prod_reparto.php">Report produzione giornaliera reparto</a></li>
             <li><hr class="dropdown-divider"></li>

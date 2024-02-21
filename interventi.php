@@ -81,7 +81,7 @@ $name=dirname(__FILE__);
         <!--h2> Gestione oggetti (<i class="fas fa-user"></i> ) 
         </h2-->
         <!--a href='report_pesi1.php' class='btn btn-info'> Grafici </a-->
-        <?php if ($id_role>0) {  #solo se non sono VIEWER ?>
+        <?php if ($id_role>=1 and $_SESSION['username']='Marzocchi') {  #solo se non sono VIEWER ?>
         <hr>
 
         <script type="text/javascript">
@@ -207,7 +207,7 @@ $name=dirname(__FILE__);
       </div>
       </form>
 
-      <?php }  # chiudo l'if del role?> 
+      <?php } # chiudo l'if del role?> 
       <hr>
         <h4>Interventi aperti</h4>
 
@@ -223,7 +223,7 @@ $name=dirname(__FILE__);
 				<table  id="interventi" class="table-hover" 
         idfield="id"
         data-toggle="table" data-url="./tables/interventi_aperti.php" 
-        data-group-by="true"
+        data-group-by="false"
         data-group-by-field="piazzola"
         data-show-search-clear-button="true"   
         data-show-export="true" 
@@ -242,8 +242,8 @@ $name=dirname(__FILE__);
  	<tr>
         <!--th data-checkbox="true" data-field="id"></th-->  
         <th data-field="state" data-checkbox="true" ></th>   
-        <!--th data-field="piazzola" data-sortable="true" data-visible="true" data-filter-control="input">Piazzola</th-->
-        <th data-field="stato_intervento" data-sortable="true" data-visible="true" data-filter-control="select">Stato</th>
+        <th data-field="piazzola" data-sortable="true" data-visible="true" data-filter-control="input">Piazzola</th>
+        <th data-field="stato_intervento" data-sortable="true" data-visible="false" data-filter-control="select">Stato</th>
         <th data-field="tipo_intervento" data-sortable="true" data-visible="true" data-filter-control="select">Tipo</th>
         <th data-field="data_creazione" data-sortable="true" data-visible="true" data-formatter="dateFormatter" data-filter-control="input">Data<br>apertura</th>
         <th data-field="priorita" data-sortable="true" data-visible="true" data-filter-control="select">Priorita</th>
