@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4353d2ddc44aa568edbdedcda872284981cdfc72',
+        'reference' => 'e51edce8a89f1489b5bc45978aaf78b57224cc0a',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4353d2ddc44aa568edbdedcda872284981cdfc72',
+            'reference' => 'e51edce8a89f1489b5bc45978aaf78b57224cc0a',
             'dev_requirement' => false,
         ),
         'picqer/php-barcode-generator' => array(
@@ -29,12 +29,12 @@
             'dev_requirement' => false,
         ),
         'twbs/bootstrap' => array(
-            'pretty_version' => 'v5.1.3',
-            'version' => '5.1.3.0',
+            'pretty_version' => 'v5.3.3',
+            'version' => '5.3.3.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../twbs/bootstrap',
             'aliases' => array(),
-            'reference' => '1a6fdfae6be09b09eaced8f0e442ca6f7680a61e',
+            'reference' => '6e1f75f420f68e1d52733b8e407fc7c3766c9dba',
             'dev_requirement' => false,
         ),
         'twbs/bootstrap-icons' => array(
@@ -49,7 +49,7 @@
         'twitter/bootstrap' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v5.1.3',
+                0 => 'v5.3.3',
             ),
         ),
     ),
