@@ -230,7 +230,8 @@ $name=dirname(__FILE__);
         data-export-type=['json', 'xml', 'csv', 'txt', 'sql', 'excel', 'doc', 'pdf'] 
 				data-search="true" data-click-to-select="true" data-show-print="false"  
 				data-pagination="true" data-page-size=75 data-page-list=[10,25,50,75,100,200,500]
-				data-sidePagination="true" data-show-refresh="true" data-show-toggle="true"
+				data-side-pagination="server"
+        data-show-refresh="true" data-show-toggle="true"
 				data-filter-control="true"
         data-toolbar="#toolbar" >
         
