@@ -120,7 +120,8 @@ VALUES ('NUOVO UTENTE ', 'INSERT', $1, now(), (select id_user from util_go.sys_u
             Report
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="./interventi.php">Interventi aperti</a></li>
+            <li><a class="dropdown-item" href="./interventi.php">Interventi aperti (esclusi presi in carico)</a></li>
+            <li><a class="dropdown-item" href="./interventi_aperti_pc.php">Interventi aperti e presi in carico</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="./report_prod_squadra.php">Report produzione giornaliera per squadra</a></li>
             <li><a class="dropdown-item" href="./report_prod_reparto.php">Report produzione giornaliera reparto</a></li>
