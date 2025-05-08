@@ -22,7 +22,7 @@
     from 
     (
     select i.id,
-    string_agg(ti.descrizione, ' - ') as tipo_intervento,
+    string_agg(ti.descrizione, ' ; ') as tipo_intervento,
     tsi.id as id_stato_intervento,
     tsi.descrizione as stato_intervento,
     i.data_creazione,
@@ -81,7 +81,7 @@
     tr.nome
     UNION
     select i.id,
-    string_agg(ti.descrizione, ' - ') as tipo_intervento,
+    string_agg(ti.descrizione, ' ; ') as tipo_intervento,
     tsi.id as id_stato_intervento,
     tsi.descrizione as stato_intervento,
     i.data_creazione, 

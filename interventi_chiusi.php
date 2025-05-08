@@ -89,7 +89,7 @@ $name=dirname(__FILE__);
         <button id="showSelectedRows" class="btn btn-primary" type="button">Crea ordine di lavoro</button>
       </div-->
 				
-				<table  id="interventi" class="table-hover" 
+				<table  id="interventi" class="table-hover table-sm" 
         idfield="id"
         data-toggle="table" data-url="./tables/interventi_chiusi_abortiti.php" 
         data-group-by="false"

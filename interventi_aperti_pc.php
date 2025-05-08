@@ -88,13 +88,13 @@ $name=dirname(__FILE__);
 
 
 
-            <div class="row">
+            <div class="row table-responsive">
 
                   <!--div id="toolbar">
         <button id="showSelectedRows" class="btn btn-primary" type="button">Crea ordine di lavoro</button>
       </div-->
 				<div id="tabella">
-				<table  id="interventi_aperti_pc" class="table-hover" 
+				<table  id="interventi_aperti_pc" class="table-hover table-sm" 
         idfield="id"
         data-toggle="table" data-url="./tables/interventi_aperti_pc.php" 
         data-group-by="false"

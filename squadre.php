@@ -228,7 +228,7 @@ $name=dirname(__FILE__);
         <div class="row">
 
         <div id="tabella">
-				<table  id="squadre1" class="table-hover" 
+				<table  id="squadre1" class="table-hover table-sm" 
         idfield="id"
         data-toggle="table" data-url="./tables/squadre.php?s=t" 
         data-group-by="true"
@@ -279,7 +279,7 @@ function odl(value) {
         <div class="row">
 
         <div id="tabella">
-				<table  id="squadre2" class="table-hover" 
+				<table  id="squadre2" class="table-hover table-sm" 
         idfield="id"
         data-toggle="table" data-url="./tables/squadre.php?s=f" 
         data-group-by="true"

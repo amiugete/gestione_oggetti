@@ -86,7 +86,7 @@ $name=dirname(__FILE__);
         <button id="showSelectedRows" class="btn btn-primary" type="button">Crea ordine di lavoro</button>
       </div-->
 				
-				<table  id="prod_squadra" class="table-hover" 
+				<table  id="prod_squadra" class="table-hover table-sm" 
         idfield="id"
         data-toggle="table" data-url="./tables/<?php echo basename($_SERVER['PHP_SELF']);?>" 
         data-group-by="false"
