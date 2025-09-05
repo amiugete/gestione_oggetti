@@ -103,3 +103,10 @@ Le dipendenze (al 2022-06-17) sono:
 
 * https://github.com/snapappointments/bootstrap-select.git
 * https://github.com/wenzhixin/bootstrap-table.git
+
+
+
+# Per mettere in manutenzione il sito 
+
+Agire sulla pagina `navbar_up.php` modificando il parametro `$in_manutenzione = 1;`
+
