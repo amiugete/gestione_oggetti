@@ -141,7 +141,8 @@ $name=dirname(__FILE__);
         }
     ?></h5>
     <h6 class="card-subtitle mb-2 text-muted">Interventi presi in carico</h6>
-    <p class="card-text"><a class="btn btn-secondary" target="gestione_oggetti" href="<?php echo $gestione_oggetti_link;?>ordini">Visualizza dettagli</a></p>
+    <p class="card-text"><a class="btn btn-secondary" target="gestione_oggetti" href="./interventi_aperti_pc.php">Visualizza aperti e presi in carico</a></p>
+    <p class="card-text"><a class="btn btn-secondary" target="gestione_oggetti" href="<?php echo $gestione_oggetti_link;?>ordini">Vai a gest. oggetti</a></p>
     </div>
     </div>
 
@@ -162,8 +163,8 @@ $name=dirname(__FILE__);
         }
     ?></h5>
     <h6 class="card-subtitle mb-2 text-muted">Interventi aperti</h6>
-    <p class="card-text"><a class="btn btn-secondary" target="gestione_oggetti" href="<?php echo $gestione_oggetti_link;?>interventi">Visualizza dettagli</a></p>
-    </div>
+    <p class="card-text"><a class="btn btn-secondary" target="gestione_oggetti" href="./interventi.php">Visualizza solo aperti</a></p>
+    <p class="card-text"><a class="btn btn-secondary" target="gestione_oggetti" href="<?php echo $gestione_oggetti_link;?>ordini">Vai a gest. oggetti</a></p>    </div>
     </div>
 
 
