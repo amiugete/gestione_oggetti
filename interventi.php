@@ -81,7 +81,7 @@ $name=dirname(__FILE__);
         <!--h2> Gestione oggetti (<i class="fas fa-user"></i> ) 
         </h2-->
         <!--a href='report_pesi1.php' class='btn btn-info'> Grafici </a-->
-        <?php if ($id_role>=1 and $_SESSION['username']='Marzocchi') {  #solo se non sono VIEWER ?>
+        <?php if ($id_role>=1 and $_SESSION['username']=='Marzocchi') {  #solo se non sono VIEWER ?>
         <hr>
 
         <script type="text/javascript">

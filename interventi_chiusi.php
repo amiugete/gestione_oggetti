@@ -72,7 +72,8 @@ $name=dirname(__FILE__);
       
 
   
-
+      <div id="toolbar"> 
+      </div>
       <div id="tabella">
       <hr>
       
@@ -89,16 +90,16 @@ $name=dirname(__FILE__);
         <button id="showSelectedRows" class="btn btn-primary" type="button">Crea ordine di lavoro</button>
       </div-->
 				
-				<table  id="interventi" class="table-hover table-sm" 
+				<table  id="interventi_chiusi" class="table-hover table-sm" 
         idfield="id"
         data-toggle="table" data-url="./tables/interventi_chiusi_abortiti.php" 
         data-group-by="false"
         data-group-by-field="piazzola"
         data-show-search-clear-button="true"   
-        data-show-export="true" 
+        data-show-export="false" 
         data-export-type=['json', 'xml', 'csv', 'txt', 'sql', 'excel', 'doc', 'pdf'] 
 				data-search="true" data-click-to-select="true" data-show-print="false"  
-				data-pagination="false" data-page-size=75 data-page-list=[10,25,50,75,100,200,500]
+				data-pagination="true" data-page-size=100 data-page-list=[10,25,50,75,100,200,500]
 				data-sidePagination="false" data-show-refresh="true" data-show-toggle="true"
 				data-filter-control="true"
         data-toolbar="#toolbar" >
@@ -130,9 +131,37 @@ $name=dirname(__FILE__);
 
 
 <script>
+  var $table = $('#interventi_chiusi');
+
+
   $(function() {
     $('#interventi').bootstrapTable()
   })
+
+  $table.on('post-body.bs.table', function () {
+    if ($('#export-btn-filtered').length === 0) {
+      $('.fixed-table-toolbar .columns')
+        .append('<button id="export-btn-filtered" class="btn btn-secondary ms-2" title="Esporta file Excel"><i class="bi bi-download"></i> Esporta tabella</button>');
+    }
+  });
+
+  $(function() {
+  initTableExport({
+    tableId: "interventi_chiusi",
+    exportAllBtn: "#export-btn",
+    exportFilteredBtn: "#export-btn-filtered",
+    baseUrl: "./tables/interventi_chiusi_abortiti.php",
+    /*extraParams: () => {
+      // parametri extra della pagina
+      //const range = $('input[name="daterange"]').val().split(" - ");
+      return {
+        ut: $("#ut0").val() == 0 ? "" : $("#ut0").val(),
+        solo_attivi: getStatoVersioni()//,
+        //data_fine: range[1].split('/').reverse().join('-')
+      };
+    }*/
+  });
+});
 
   /*data.forEach(d=>{
        data_creazione = moment(d.data_creazione).format('DD/MM/YYYY HH24:MI')
